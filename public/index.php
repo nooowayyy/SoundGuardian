@@ -39,36 +39,53 @@ include 'header.php';
         </div>
       </section>
       
-      <h2>Recentes</h2>
-      <section class="recentes1">
-      <button class="add">
-        
-      </button>
+      <div class="divisa">
+
+        <h2>Recentes</h2><button class="add">
+          <a class="acard" href="add_item.php">+</a>
+        </button>
+      </div>
+        <section class="recentes1">
+      
   <div class="recentes2">
     <?php foreach($recent as $it): ?>
-      <div class="card" style="width:220px;padding:8px;">
-        <?php if(!empty($it['foto'])): ?><img src="<?=htmlspecialchars($it['foto'])?>" style="width:100%;height:140px;object-fit:cover"><?php endif; ?>
+      <div class="card" style="width:auto;padding:15px;border-radius:15px;">
+        <div class="imgprod">
+          <?php if(!empty($it['foto'])): ?><img src="<?=htmlspecialchars($it['foto'])?>" style="width:100%;height:140px;object-fit:cover"><?php endif; ?>
+  </div>
           <h3><?=htmlspecialchars($it['nome'])?></h3>
           <p><?=htmlspecialchars($it['artista'])?> • <?=htmlspecialchars($it['tipo'])?></p>
-          <a href="view_item.php?id=<?= $it['id'] ?>">Ver</a>
+          <a class="acard" href="view_item.php?id=<?= $it['id'] ?>">Ver</a>
       </div>
       <?php endforeach; ?>
     </div>
   </section>
-  
-  <section>
-    <h2>Favoritos</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <?php foreach($recent as $it): ?>
-        <div class="card" style="width:220px;padding:8px;">
+<div class="divisa">
+
+  <h2>Recentes</h2>
+  <button class="add">
+     <a class="acard" href="add_item.php">+</a>
+  </button>
+</div>
+  <section class="recentes1">
+    
+  <div class="recentes2">
+    <?php foreach($recent as $it): ?>
+      <div class="card" style="width:auto;padding:15px;border-radius:15px;">
+        <div class="imgprod">
           <?php if(!empty($it['foto'])): ?><img src="<?=htmlspecialchars($it['foto'])?>" style="width:100%;height:140px;object-fit:cover"><?php endif; ?>
-            <h3><?=htmlspecialchars($it['nome'])?></h3>
-            <p><?=htmlspecialchars($it['artista'])?> • <?=htmlspecialchars($it['tipo'])?></p>
-            <a href="view_item.php?id=<?= $it['id'] ?>">Ver</a>
-          </div>
-          <?php endforeach; ?>
-        </div>
-      </section>
+  </div>
+          <h3><?=htmlspecialchars($it['nome'])?></h3>
+          <p><?=htmlspecialchars($it['artista'])?> • <?=htmlspecialchars($it['tipo'])?></p>
+          <a class="acard" href="view_item.php?id=<?= $it['id'] ?>">Ver</a>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
+
+  
+  
+ 
       
       <p><a href="add_item.php">Adicionar novo item</a> | <a href="list.php">Listas</a></p>
       
